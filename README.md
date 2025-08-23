@@ -24,18 +24,6 @@ DemoServ — это демонстрационный сервис для раб�
 
 `GET /order/{order_uid}` — получение заказа по ID
 
-📌 **Пример ответа:**
-
-```json
-{
-  "order_uid": "b563feb7b2b84b6test",
-  "track_number": "WBILMTESTTRACK",
-  "entry": "WBIL",
-  "delivery": { "name": "Test Testov", "phone": "+9720000000" },
-  "payment": { "transaction": "b563feb7b2b84b6test", "amount": 1817 },
-  "items": [ { "name": "Mascaras", "price": 453 } ]
-}
-```
 ---
 🛠️ **Технологии**
 
@@ -181,3 +169,4 @@ go test ./internal/postgres -v
 🧑‍💻 **Автор**
 
 Telegram: [@zag1rov](https://t.me/zag1rov)
+
