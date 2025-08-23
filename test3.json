@@ -1,0 +1,62 @@
+{
+   "order_uid": "87HJKhiu87y9y989",
+   "track_number": "WBILOTESTTRACK2",
+   "entry": "WBIL",
+   "delivery": {
+      "name": "Maria Petrova",
+      "phone": "+9722222222",
+      "zip": "7890123",
+      "city": "Tel Aviv",
+      "address": "Ben Gurion 25",
+      "region": "Central",
+      "email": "maria.petrova@gmail.com"
+   },
+   "payment": {
+      "transaction": "a456ghi9d4e06c8test",
+      "request_id": "req123",
+      "currency": "EUR",
+      "provider": "paypal",
+      "amount": 3200,
+      "payment_dt": 1637910000,
+      "bank": "hapoalim",
+      "delivery_cost": 1000,
+      "goods_total": 2200,
+      "custom_fee": 0
+   },
+   "items": [
+      {
+         "chrt_id": 9934932,
+         "track_number": "WBILOTESTTRACK2",
+         "price": 1100,
+         "rid": "ef7890123c456test",
+         "name": "Eyeliner",
+         "sale": 15,
+         "size": "0",
+         "total_price": 935,
+         "nm_id": 2389214,
+         "brand": "Maybelline",
+         "status": 203
+      },
+      {
+         "chrt_id": 9934933,
+         "track_number": "WBILOTESTTRACK2",
+         "price": 1300,
+         "rid": "gh9012345d678test",
+         "name": "Foundation",
+         "sale": 10,
+         "size": "M",
+         "total_price": 1170,
+         "nm_id": 2389215,
+         "brand": "Estee Lauder",
+         "status": 202
+      }
+   ],
+   "locale": "en",
+   "internal_signature": "",
+   "customer_id": "maria",
+   "delivery_service": "dhl",
+   "shardkey": "7",
+   "sm_id": 97,
+   "date_created": "2021-11-26T08:15:00Z",
+   "oof_shard": "3"
+}

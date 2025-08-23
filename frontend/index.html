@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Поиск заказа</title>
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Поиск заказа 🔍</h1>
+    <p>Введите <b>order_uid</b>, чтобы получить данные</p>
+    <div>
+      <input type="text" id="order_uid" placeholder="например: b563feb7b2b84b6test">
+      <button onclick="fetchOrder()">Найти</button>
+    </div>
+    <div id="result" class="result"></div>
+    <footer>Демонстрационный сервис, 2025</footer>
+  </div>
+
+  <script>
+    function formatOrderToHtml(data) {
+      let html = '<p class="success">✅ Заказ успешно найден!</p>';
+      html += '<table class="order-table">';
+      html += '<tr><th colspan="2">Основные данные заказа</th></tr>';
+      html += `<tr><td>Order UID</td><td>${data.order_uid}</td></tr>`;
+      html += `<tr><td>Track Number</td><td>${data.track_number}</td></tr>`;
+      html += `<tr><td>Entry</td><td>${data.entry}</td></tr>`;
+      html += `<tr><td>Locale</td><td>${data.locale}</td></tr>`;
+      html += `<tr><td>Customer ID</td><td>${data.customer_id}</td></tr>`;
+      html += `<tr><td>Delivery Service</td><td>${data.delivery_service}</td></tr>`;
+      html += `<tr><td>Shard Key</td><td>${data.shardkey}</td></tr>`;
+      html += `<tr><td>SM ID</td><td>${data.sm_id}</td></tr>`;
+      html += `<tr><td>Date Created</td><td>${new Date(data.date_created).toLocaleString()}</td></tr>`;
+      html += `<tr><td>OOF Shard</td><td>${data.oof_shard}</td></tr>`;
+      html += `<tr><td>Internal Signature</td><td>${data.internal_signature}</td></tr>`;
+
+      html += '<tr><th colspan="2">Доставка</th></tr>';
+      html += `<tr><td>Name</td><td>${data.delivery.name}</td></tr>`;
+      html += `<tr><td>Phone</td><td>${data.delivery.phone}</td></tr>`;
+      html += `<tr><td>ZIP</td><td>${data.delivery.zip}</td></tr>`;
+      html += `<tr><td>City</td><td>${data.delivery.city}</td></tr>`;
+      html += `<tr><td>Address</td><td>${data.delivery.address}</td></tr>`;
+      html += `<tr><td>Region</td><td>${data.delivery.region}</td></tr>`;
+      html += `<tr><td>Email</td><td>${data.delivery.email}</td></tr>`;
+
+      html += '<tr><th colspan="2">Оплата</th></tr>';
+      html += `<tr><td>Transaction</td><td>${data.payment.transaction}</td></tr>`;
+      html += `<tr><td>Request ID</td><td>${data.payment.request_id}</td></tr>`;
+      html += `<tr><td>Currency</td><td>${data.payment.currency}</td></tr>`;
+      html += `<tr><td>Provider</td><td>${data.payment.provider}</td></tr>`;
+      html += `<tr><td>Amount</td><td>${data.payment.amount}</td></tr>`;
+      html += `<tr><td>Payment Date</td><td>${new Date(data.payment.payment_dt * 1000).toLocaleString()}</td></tr>`;
+      html += `<tr><td>Bank</td><td>${data.payment.bank}</td></tr>`;
+      html += `<tr><td>Delivery Cost</td><td>${data.payment.delivery_cost}</td></tr>`;
+      html += `<tr><td>Goods Total</td><td>${data.payment.goods_total}</td></tr>`;
+      html += `<tr><td>Custom Fee</td><td>${data.payment.custom_fee}</td></tr>`;
+
+      html += '<tr><th colspan="2">Товары</th></tr>';
+      data.items.forEach(item => {
+        html += `<tr><td>${item.name}</td><td>CHRT ID: ${item.chrt_id}, Track Number: ${item.track_number}, Price: ${item.price}, RID: ${item.rid}, Sale: ${item.sale}, Size: ${item.size}, Total Price: ${item.total_price}, NM ID: ${item.nm_id}, Brand: ${item.brand}, Status: ${item.status}</td></tr>`;
+      });
+
+      html += '</table>';
+      return html;
+    }
+
+    async function fetchOrder() {
+      const orderId = document.getElementById('order_uid').value.trim();
+      const resultDiv = document.getElementById('result');
+      resultDiv.style.display = 'none';
+      resultDiv.innerHTML = '';
+
+      if (!orderId) {
+        resultDiv.innerHTML = '<p class="error">⚠ Введите ID заказа</p>';
+        resultDiv.classList.add('show');
+        resultDiv.style.display = 'block';
+        return;
+      }
+
+      try {
+        const response = await fetch(`http://localhost:8085/order/${orderId}`);
+        
+        if (!response.ok) {
+          resultDiv.innerHTML = '<p class="error">🚫 Заказ не найден</p>';
+        } else {
+          const data = await response.json();
+          resultDiv.innerHTML = formatOrderToHtml(data);
+        }
+      } catch (err) {
+        resultDiv.innerHTML = '<p class="error">Не удалось загрузить данные. Проверьте подключение или попробуйте позже.</p>';
+      }
+
+      resultDiv.classList.add('show');
+      resultDiv.style.display = 'block';
+    }
+  </script>
+</body>
+</html>

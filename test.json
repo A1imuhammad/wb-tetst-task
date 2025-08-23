@@ -1,0 +1,75 @@
+{
+   "order_uid": "c789def8c3c95a7test",
+   "track_number": "WBILNTESTTRACK1",
+   "entry": "WBIL",
+   "delivery": {
+      "name": "Alex Ivanov",
+      "phone": "+9721111111",
+      "zip": "1234567",
+      "city": "Haifa",
+      "address": "Herzl Street 10",
+      "region": "North",
+      "email": "alex.ivanov@gmail.com"
+   },
+   "payment": {
+      "transaction": "c789def8c3c95a7test",
+      "request_id": "",
+      "currency": "USD",
+      "provider": "wbpay",
+      "amount": 2500,
+      "payment_dt": 1637908800,
+      "bank": "leumi",
+      "delivery_cost": 1200,
+      "goods_total": 1300,
+      "custom_fee": 0
+   },
+   "items": [
+      {
+         "chrt_id": 9934931,
+         "track_number": "WBILNTESTTRACK1",
+         "price": 650,
+         "rid": "cd1234567b890test",
+         "name": "Lipstick",
+         "sale": 20,
+         "size": "S",
+         "total_price": 520,
+         "nm_id": 2389213,
+         "brand": "L'Oreal",
+         "status": 201
+      },
+      {
+         "chrt_id": 9934934,
+         "track_number": "WBILPTESTTRACK3",
+         "price": 500,
+         "rid": "ij3456789e890test",
+         "name": "Blush",
+         "sale": 25,
+         "size": "L",
+         "total_price": 375,
+         "nm_id": 2389216,
+         "brand": "NARS",
+         "status": 204
+      },
+      {
+         "chrt_id": 9934933,
+         "track_number": "WBILOTESTTRACK2",
+         "price": 1300,
+         "rid": "gh9012345d678test",
+         "name": "Foundation",
+         "sale": 10,
+         "size": "M",
+         "total_price": 1170,
+         "nm_id": 2389215,
+         "brand": "Estee Lauder",
+         "status": 202
+      }
+   ],
+   "locale": "en",
+   "internal_signature": "",
+   "customer_id": "alex",
+   "delivery_service": "meest",
+   "shardkey": "8",
+   "sm_id": 98,
+   "date_created": "2021-11-26T07:00:00Z",
+   "oof_shard": "2"
+}

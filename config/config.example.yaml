@@ -1,0 +1,15 @@
+POSTGRES:
+  POSTGRES_USER: user            # имя пользователя БД
+  POSTGRES_PASSWORD: password    # пароль для подключения
+  POSTGRES_PORT: 5432            # порт PostgreSQL
+  POSTGRES_DB: orders_db         # имя базы данных
+  POSTGRES_HOST: localhost       # хост БД (например: db в docker-compose)
+
+KAFKA:
+  KKAFKA_BROKER: "localhost:9092"  # адрес брокера Kafka
+  KAFKA_TOPIC: "orders-topic"      # название топика
+  KAFKA_GROUP: "orders-group"      # consumer group id
+
+HTTP_SERVER:
+  ADDRESS: "localhost:8085"   # адрес и порт для HTTP сервера
+  TIMEOUT: 4s                 # таймаут запросов

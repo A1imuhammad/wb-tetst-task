@@ -1,0 +1,16 @@
+POSTGRES:
+  POSTGRES_USER: root
+  POSTGRES_PASSWORD: 1234
+  POSTGRES_PORT: 5432
+  POSTGRES_DB: orders_db
+  POSTGRES_HOST: localhost
+
+KAFKA:
+  KKAFKA_BROKER: "localhost:9092"
+  KAFKA_TOPIC: "my-topic"
+  KAFKA_GROUP: "group"
+
+HTTP_SERVER:
+  ADDRESS: "localhost:8085"
+  TIMEOUT: 4s
+  
