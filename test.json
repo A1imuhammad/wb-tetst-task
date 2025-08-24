@@ -39,7 +39,7 @@
       },
       {
          "chrt_id": 9934934,
-         "track_number": "WBILPTESTTRACK3",
+         "track_number": "WBILNTESTTRACK1",
          "price": 500,
          "rid": "ij3456789e890test",
          "name": "Blush",
@@ -52,7 +52,7 @@
       },
       {
          "chrt_id": 9934933,
-         "track_number": "WBILOTESTTRACK2",
+         "track_number": "WBILNTESTTRACK1",
          "price": 1300,
          "rid": "gh9012345d678test",
          "name": "Foundation",

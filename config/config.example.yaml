@@ -1,6 +1,6 @@
 POSTGRES:
-  POSTGRES_USER: user            # имя пользователя БД
-  POSTGRES_PASSWORD: password    # пароль для подключения
+  POSTGRES_USER: root            # имя пользователя БД
+  POSTGRES_PASSWORD: 1234    # пароль для подключения
   POSTGRES_PORT: 5432            # порт PostgreSQL
   POSTGRES_DB: orders_db         # имя базы данных
   POSTGRES_HOST: localhost       # хост БД (например: db в docker-compose)

@@ -49,8 +49,7 @@ func main() {
 	go func() {
 		kafka.NewProducer(cfg)
 	}()
-	// producer := kafka.NewProducer(cfg)
-	// defer producer.Close()
+
 
 
 
